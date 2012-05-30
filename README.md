@@ -13,6 +13,8 @@ Example:
 
 ```js
 require('mongoose-v2-compat');
+var mongoose = require('mongoose');
+mongoose.compat = true;
 
 // now we can use all the old methods
 mongoose.connectSet('...');
