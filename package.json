@@ -1,0 +1,15 @@
+{
+  "author": "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+  "name": "mongoose-v2-compat",
+  "description": "Mongoose v2 compatibility for v3",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "mongoose": "3.x",
+    "mocha": "*"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
