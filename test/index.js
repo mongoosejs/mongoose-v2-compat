@@ -1,6 +1,7 @@
 
 var mongoose = require('mongoose')
   , Query = mongoose.Query
+  , Document = mongoose.Document
   , assert = require('assert')
 
 require('../');
@@ -41,6 +42,8 @@ describe('mongoose-v2-compat', function () {
       Query.prototype.each();
     }, /Query#each has been removed/);
 
+    assert.equal('function', typeof Document.prototype.commit);
+
     mongoose.compat = false;
 
     var methods = ('or nor gt gte lt lte ne in nin all regex '
@@ -64,5 +67,7 @@ describe('mongoose-v2-compat', function () {
     assert.equal(Query.prototype.only, undefined);
     assert.equal(Query.prototype.exclude, undefined);
     assert.equal(Query.prototype.each, undefined);
+
+    assert.equal('undefined', typeof Document.prototype.commit);
   })
 })
