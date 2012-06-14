@@ -54,6 +54,7 @@ Thing.where('tags').$in(array).asc('name').run(callback);
   - Query#desc
   - mongoose.createSetConnection
   - mongoose.connectSet
+  - document#commit
 
 ## tests
 
