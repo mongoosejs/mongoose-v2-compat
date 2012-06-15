@@ -55,6 +55,12 @@ Thing.where('tags').$in(array).asc('name').run(callback);
   - mongoose.createSetConnection
   - mongoose.connectSet
   - document#commit
+  - MongooseArray#$push
+  - MongooseArray#$pushAll
+  - MongooseArray#$pull
+  - MongooseArray#$pullAll
+  - MongooseArray#$unshift
+  - MongooseArray#$addToSet
 
 ## tests
 
