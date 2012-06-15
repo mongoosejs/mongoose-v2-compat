@@ -2,6 +2,7 @@
 var mongoose = require('mongoose')
   , Query = mongoose.Query
   , Document = mongoose.Document
+  , MArray = mongoose.Types.Array
   , assert = require('assert')
 
 require('../');
@@ -44,6 +45,13 @@ describe('mongoose-v2-compat', function () {
 
     assert.equal('function', typeof Document.prototype.commit);
 
+    assert.equal('function', typeof MArray.prototype.$push);
+    assert.equal('function', typeof MArray.prototype.$pushAll);
+    assert.equal('function', typeof MArray.prototype.$pull);
+    assert.equal('function', typeof MArray.prototype.$pullAll);
+    assert.equal('function', typeof MArray.prototype.$unshift);
+    assert.equal('function', typeof MArray.prototype.$addToSet);
+
     mongoose.compat = false;
 
     var methods = ('or nor gt gte lt lte ne in nin all regex '
@@ -69,5 +77,12 @@ describe('mongoose-v2-compat', function () {
     assert.equal(Query.prototype.each, undefined);
 
     assert.equal('undefined', typeof Document.prototype.commit);
+
+    assert.equal('undefined', typeof MArray.prototype.$push);
+    assert.equal('undefined', typeof MArray.prototype.$pushAll);
+    assert.equal('undefined', typeof MArray.prototype.$pull);
+    assert.equal('undefined', typeof MArray.prototype.$pullAll);
+    assert.equal('undefined', typeof MArray.prototype.$unshift);
+    assert.equal('undefined', typeof MArray.prototype.$addToSet);
   })
 })
